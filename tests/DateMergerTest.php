@@ -1,5 +1,8 @@
 <?php
 
+namespace Penance316\Tests;
+
+use DateTime;
 use Penance316\Merger\DateMerger;
 use PHPUnit\Framework\TestCase;
 
