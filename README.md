@@ -2,6 +2,10 @@
 
 A PHP based date merger that combines overlapping date ranges.
 
+Available via composer
+
+`composer require penance316/merger`
+
 ## Usage
 ```PHP
 
