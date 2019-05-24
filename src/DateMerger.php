@@ -5,16 +5,12 @@ namespace Penance316\Merger;
 
 class DateMerger {
 
-    public static function test()
-    {
-        return 'hello world';
-    }
-
     /**
-     * Merge ranges into continuous ranges for overlapping ranges.
+     * Merge overlapping date ranges.
      *
-     * @param \DateTime[] $ranges
-     *   Array of PHP DateTime objects.
+     * @param array([\DateTime,\DateTime]) $ranges
+     *   Array of pairs of DateTime objects indicating start and end of a date range.
+     *  [[new DateTime('2019-04-01'), new DateTime('2019-05-01')], [new DateTime('2020-04-01'), new DateTime('2020-05-01')]].
      *
      * @return \DateTime[][]
      */

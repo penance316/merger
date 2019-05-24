@@ -10,12 +10,6 @@ class DateMergerTest extends TestCase {
 
     const DATE_FORMAT = "Y-m-d";
 
-    public function testTest()
-    {
-        $results = DateMerger::test();
-        $this->assertEquals('hello world', $results);
-    }
-
     /**
      * Should merge down into 1 range.
      */
