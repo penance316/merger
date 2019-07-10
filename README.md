@@ -1,4 +1,4 @@
-# DateMerger
+# DateMerger   [![Build Status](https://travis-ci.org/penance316/merger.svg?branch=master)](https://travis-ci.org/penance316/merger)
 
 A PHP based date merger that combines overlapping date ranges.
 
