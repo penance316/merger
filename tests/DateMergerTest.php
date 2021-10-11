@@ -22,6 +22,7 @@ class DateMergerTest extends TestCase {
             [new DateTime('2019-06-01'), new DateTime('2019-07-01')],
             [new DateTime('2019-07-01'), new DateTime('2019-08-01')],
             [new DateTime('2019-08-01'), new DateTime('2019-09-01')],
+            [new DateTime('2019-09-02'), new DateTime('2018-09-05')],
         ];
 
         $results = DateMerger::mergeRanges($dates);

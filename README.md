@@ -9,6 +9,8 @@ Available via composer
 ## Usage
 ```PHP
 
+// Each date pair should consist of [earlierDate, laterDate].
+
 $dates = [
     [new DateTime('2019-04-01'), new DateTime('2019-05-01')],
     [new DateTime('2019-05-01'), new DateTime('2019-06-01')],

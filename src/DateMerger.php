@@ -29,7 +29,13 @@ class DateMerger {
         foreach (array_slice($ranges, 1) as $range) {
             $top = &$stack[count($stack) - 1];
 
-            if ($top[1] < $range[0]) {
+            //check if more than 1 day away otherwise can just be merged.
+            $interval = date_diff($top[1], $range[0]);
+
+            if ($interval->days === 1) {
+              // We assume the date ranges are always formatted [earlier, later]
+              $top[1] = $range[1];
+            } elseif ($top[1] < $range[0]) {
                 // Its a new one so push to stack
                 array_push($stack, $range);
             } elseif
