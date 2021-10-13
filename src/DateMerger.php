@@ -16,12 +16,16 @@ class DateMerger {
      */
     public static function mergeRanges(array $ranges): array
     {
+        $stack = [];
+
+        if (empty($ranges)) {
+          return $stack;
+        }
+
         // Sort by start dates.
         usort($ranges, function($a, $b) {
             return $a[0] <=> $b[0];
         });
-
-        $stack = [];
 
         // Add earliest range.
         array_push($stack, $ranges[0]);

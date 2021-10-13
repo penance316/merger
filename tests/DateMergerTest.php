@@ -26,7 +26,18 @@ class DateMergerTest extends TestCase {
         ];
 
         $results = DateMerger::mergeRanges($dates);
-        $this->assertEquals(1, count($results));
+        $this->assertCount(1, $results);
+    }
+
+  /**
+   * Test when supplying empty data set.
+   */
+    public function testEmptyResults() {
+      $dates = [];
+
+      $results = DateMerger::mergeRanges($dates);
+      $this->assertIsArray($results);
+      $this->assertCount(0, $results);
     }
 
     /**
@@ -42,7 +53,7 @@ class DateMergerTest extends TestCase {
         ];
 
         $results = DateMerger::mergeRanges($dates);
-        $this->assertEquals(1, count($results));
+        $this->assertCount(1, $results);
     }
 
     public function testMultipleRanges()
@@ -62,7 +73,7 @@ class DateMergerTest extends TestCase {
         $expectedRange1 = ['2019-04-01', '2019-10-01'];
         $expectedRange2 = ['2020-01-01', '2020-07-01'];
 
-        $this->assertEquals(2, count($results));
+        $this->assertCount(2, $results);
         $this->assertEquals($expectedRange1[0], $results[0][0]->format(self::DATE_FORMAT));
         $this->assertEquals($expectedRange1[1], $results[0][1]->format(self::DATE_FORMAT));
         $this->assertEquals($expectedRange2[0], $results[1][0]->format(self::DATE_FORMAT));
